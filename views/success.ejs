@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= success ? 'Payment Successful' : 'Payment Failed' %> - Website Marketplace</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo">WebPackages</h1>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/packages">Packages</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="payment-result">
+      <div class="container">
+        <div class="result-card <%= success ? 'success' : 'error' %>">
+          <div class="result-icon">
+            <%= success ? '✓' : '✕' %>
+          </div>
+          <h1><%= success ? 'Payment Successful!' : 'Payment Failed' %></h1>
+          <p><%= message %></p>
+          
+          <% if (success) { %>
+            <div class="next-steps">
+              <h2>What's Next?</h2>
+              <ol>
+                <li>We'll send you an email confirmation shortly</li>
+                <li>Our team will contact you within 24 hours</li>
+                <li>We'll discuss your project requirements</li>
+                <li>Your website development will begin!</li>
+              </ol>
+            </div>
+          <% } %>
+          
+          <div class="action-buttons">
+            <a href="/packages" class="btn btn-primary">Back to Packages</a>
+            <a href="/" class="btn btn-secondary">Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Website Packages Marketplace. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
